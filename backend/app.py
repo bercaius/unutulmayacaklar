@@ -4,6 +4,7 @@ import sqlite3
 import os
 import json
 import ipaddress
+import hashlib
 
 app = Flask(__name__)
 DATA_DIR = os.environ.get('RENDER_DATA_DIR', os.path.join(os.path.dirname(__file__), 'data'))
@@ -70,6 +71,27 @@ def is_banned(ip):
             continue
     return False
 
+def ban_ip_cidr(cidr):
+    try:
+        ipaddress.ip_network(cidr, strict=False)
+    except ValueError:
+        return False
+    bans = load_bans()
+    if cidr not in bans:
+        bans.append(cidr)
+        save_bans(bans)
+    return True
+
+def client_ip():
+    ip = request.headers.get('X-Forwarded-For', request.remote_addr)
+    if ip and ',' in ip:
+        ip = ip.split(',')[0].strip()
+    return ip
+
+def fingerprint():
+    ua = request.headers.get('User-Agent', '')
+    return hashlib.sha256(f"{ua}|{request.accept_languages}|{request.accept_encodings}".encode('utf-8')).hexdigest()
+
 os.makedirs(os.path.dirname(DB_PATH), exist_ok=True)
 init_db()
 
@@ -95,13 +117,11 @@ def log_visit():
     if request.method == 'OPTIONS':
         return cors_response({})
     try:
-        data = request.get_json(silent=True) or {}
-        ip = request.headers.get('X-Forwarded-For', request.remote_addr)
-        if ip and ',' in ip:
-            ip = ip.split(',')[0].strip()
+        ip = client_ip()
         if is_banned(ip):
             return cors_response({'status': 'banned'}, 403)
 
+        data = request.get_json(silent=True) or {}
         conn = get_db()
         conn.execute(
             'INSERT INTO visits (ip, user_agent, path, referrer, timestamp) VALUES (?, ?, ?, ?, ?)',
@@ -125,13 +145,11 @@ def log_console():
     if request.method == 'OPTIONS':
         return cors_response({})
     try:
-        data = request.get_json(silent=True) or {}
-        ip = request.headers.get('X-Forwarded-For', request.remote_addr)
-        if ip and ',' in ip:
-            ip = ip.split(',')[0].strip()
+        ip = client_ip()
         if is_banned(ip):
-            return cors_response({'status': 'banned'}), 403
+            return cors_response({'status': 'banned'}, 403)
 
+        data = request.get_json(silent=True) or {}
         conn = get_db()
         conn.execute(
             'INSERT INTO console_logs (ip, user_agent, details, timestamp) VALUES (?, ?, ?, ?)',
@@ -147,7 +165,7 @@ def log_console():
         return cors_response({'status': 'logged'}), 200
     except Exception as e:
         print('Log console error:', e)
-        return jsonify({'error': str(e)}), 500
+        return cors_response({'error': str(e)}), 500
 
 @app.after_request
 def apply_cors(response):
@@ -170,16 +188,9 @@ def ban_ip():
     cidr = data.get('ip') or data.get('cidr')
     if not cidr:
         return jsonify({'error': 'ip or cidr required'}), 400
-    try:
-        ipaddress.ip_network(cidr, strict=False)
-    except ValueError:
+    if not ban_ip_cidr(cidr):
         return jsonify({'error': 'invalid cidr'}), 400
-
-    bans = load_bans()
-    if cidr not in bans:
-        bans.append(cidr)
-    save_bans(bans)
-    return jsonify({'status': 'banned', 'banned': bans}), 200
+    return jsonify({'status': 'banned', 'banned': load_bans()}), 200
 
 @app.route('/api/unban', methods=['POST'])
 def unban_ip():
@@ -195,9 +206,7 @@ def unban_ip():
 
 @app.route('/api/check-ban', methods=['GET'])
 def check_ban():
-    ip = request.headers.get('X-Forwarded-For', request.remote_addr)
-    if ip and ',' in ip:
-        ip = ip.split(',')[0].strip()
+    ip = client_ip()
     banned = is_banned(ip)
     return jsonify({'ip': ip, 'banned': banned}), 200
 
@@ -216,5 +225,4 @@ def console_logs():
     return jsonify({'logs': [dict(r) for r in rows]}), 200
 
 if __name__ == '__main__':
-    init_db()
     app.run(host='0.0.0.0', port=5000, debug=True)
