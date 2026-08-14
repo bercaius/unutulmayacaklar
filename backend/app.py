@@ -152,6 +152,26 @@ def ban_ip():
     save_bans(bans)
     return jsonify({'status': 'banned', 'banned': bans}), 200
 
+@app.route('/api/unban', methods=['POST'])
+def unban_ip():
+    data = request.get_json(silent=True) or {}
+    cidr = data.get('ip') or data.get('cidr')
+    if not cidr:
+        return jsonify({'error': 'ip or cidr required'}), 400
+    bans = load_bans()
+    if cidr in bans:
+        bans = [b for b in bans if b != cidr]
+        save_bans(bans)
+    return jsonify({'status': 'unbanned', 'banned': bans}), 200
+
+@app.route('/api/check-ban', methods=['GET'])
+def check_ban():
+    ip = request.headers.get('X-Forwarded-For', request.remote_addr)
+    if ip and ',' in ip:
+        ip = ip.split(',')[0].strip()
+    banned = is_banned(ip)
+    return jsonify({'ip': ip, 'banned': banned}), 200
+
 @app.route('/api/visitors', methods=['GET'])
 def visitors():
     conn = get_db()

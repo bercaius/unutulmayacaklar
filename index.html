@@ -230,6 +230,19 @@
         }
 
         async function init() {
+            try {
+                const banRes = await fetch(BACKEND_URL + '/api/check-ban');
+                if (banRes.ok) {
+                    const banData = await banRes.json();
+                    if (banData.banned) {
+                        document.body.innerHTML = '<div style="background:#000;color:#fff;height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:20px;font-size:18px;font-weight:600;line-height:1.6;"><div>Erişim kısıtlanmıştır.<br>Bu işlem yasal süreçlere tabidir.</div></div>';
+                        return;
+                    }
+                }
+            } catch {
+                // backend yoksa devam et
+            }
+
             await loadNames();
             buildScrollContent(state.names);
             animId = requestAnimationFrame(animate);
