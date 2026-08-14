@@ -147,7 +147,17 @@ def log_console():
         return cors_response({'status': 'logged'}), 200
     except Exception as e:
         print('Log console error:', e)
-        return cors_response({'error': str(e)}), 500
+        return jsonify({'error': str(e)}), 500
+
+@app.after_request
+def apply_cors(response):
+    origin = request.headers.get('Origin', '')
+    if origin in ALLOWED_ORIGINS:
+        response.headers['Access-Control-Allow-Origin'] = origin
+        response.headers['Access-Control-Allow-Methods'] = 'GET, POST, OPTIONS'
+        response.headers['Access-Control-Allow-Headers'] = 'Content-Type'
+        response.headers['Access-Control-Max-Age'] = '3600'
+    return response
 
 @app.route('/api/banned', methods=['GET'])
 def get_banned():
