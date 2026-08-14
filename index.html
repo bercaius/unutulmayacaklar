@@ -225,6 +225,9 @@
         console.clear();
         console.log(asciiArt);
         console.log('%c Bu mevzi, dökülen kanların ve sarsılmaz bir millet iradesinin teminatı altındadır. Geri dönün; burada size geçit yok. ', 'color: #fff; background: #c00; padding: 4px 8px; font-weight: bold;');
+        console.log('%c================================================================================', 'color: #fff; background: #c00; padding: 2px; font-weight: bold;');
+        console.log('%cŞehitlerimizin anısına kurulan bu yapıda tüm istekler izlenmekte ve engellenmektedir.\nBu adreste aradığınızı bulamayacaksınız.', 'color: #fff; background: #c00; padding: 10px; font-weight: bold; font-size: 16px; line-height: 1.6;');
+        console.log('%c================================================================================', 'color: #fff; background: #c00; padding: 2px; font-weight: bold;');
 
         const originalConsoleLog = console.log;
         const originalConsoleError = console.error;
@@ -271,7 +274,10 @@
             if (!wrapper) {
                 console.clear();
                 console.log(asciiArt);
-                console.log('%c UYARI: Sayfa bütünlüğü bozuldu! ', 'color: #fff; background: #c00; padding: 4px 8px; font-weight: bold;');
+                console.log('%c Bu mevzi, dökülen kanların ve sarsılmaz bir millet iradesinin teminatı altındadır. Geri dönün; burada size geçit yok. ', 'color: #fff; background: #c00; padding: 4px 8px; font-weight: bold;');
+                console.log('%c================================================================================', 'color: #fff; background: #c00; padding: 2px; font-weight: bold;');
+                console.log('%cŞehitlerimizin anısına kurulan bu yapıda tüm istekler izlenmekte ve engellenmektedir.\nBu adreste aradığınızı bulamayacaksınız.', 'color: #fff; background: #c00; padding: 10px; font-weight: bold; font-size: 16px; line-height: 1.6;');
+                console.log('%c================================================================================', 'color: #fff; background: #c00; padding: 2px; font-weight: bold;');
                 return;
             }
             const content = document.getElementById('scrollContent');
@@ -280,7 +286,10 @@
                 if (!firstText || firstText.length < 2) {
                     console.clear();
                     console.log(asciiArt);
-                    console.log('%c UYARI: İçerik bütünlüğü kontrol ediliyor... ', 'color: #ff0; font-size: 12px;');
+                    console.log('%c Bu mevzi, dökülen kanların ve sarsılmaz bir millet iradesinin teminatı altındadır. Geri dönün; burada size geçit yok. ', 'color: #fff; background: #c00; padding: 4px 8px; font-weight: bold;');
+                    console.log('%c================================================================================', 'color: #fff; background: #c00; padding: 2px; font-weight: bold;');
+                    console.log('%cŞehitlerimizin anısına kurulan bu yapıda tüm istekler izlenmekte ve engellenmektedir.\nBu adreste aradığınızı bulamayacaksınız.', 'color: #fff; background: #c00; padding: 10px; font-weight: bold; font-size: 16px; line-height: 1.6;');
+                    console.log('%c================================================================================', 'color: #fff; background: #c00; padding: 2px; font-weight: bold;');
                 }
             }
         }, 3000);
