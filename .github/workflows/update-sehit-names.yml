@@ -1,0 +1,35 @@
+name: Update Şehit Names
+
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+  workflow_dispatch:
+
+jobs:
+  update-names:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Fetch and update names
+        run: python scripts/fetch_names.py
+
+      - name: Commit and push if changed
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          if git diff --quiet data/names.json; then
+            echo 'No changes'
+          else
+            git add data/names.json
+            git commit -m 'Update sehit names'
+            git push
+          fi

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unutulmayacaklar - Şehitlerimizin İsimleri</title>
+    <meta name="description" content="Şehitlerimizin İsimleri - Unutulmayacaklar">
+    <meta name="keywords" content="şehit, şehitler, unutulmayacaklar, isimleri">
+    <link rel="icon" type="image/jpeg" href="siyahkurdele.jpg">
+    <meta property="og:title" content="Unutulmayacaklar">
+    <meta property="og:description" content="Şehitlerimizin İsimleri">
+    <meta property="og:image" content="siyahkurdele.jpg">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self' https://www.mehmetcik.org.tr; font-src 'self' https://fonts.gstatic.com; frame-ancestors 'none'; base-uri 'self'; form-action 'none';">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="Referrer-Policy" content="no-referrer">
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+    <link rel="canonical" href="https://unutulmayacaklar.github.io/unutulmayacaklar/">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+            overflow: hidden;
+        }
+
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            position: relative;
+        }
+
+        .left-text {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 70px;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            writing-mode: vertical-rl;
+            transform: rotate(180deg);
+            z-index: 2;
+            pointer-events: none;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+        }
+
+        .kurdele {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 140px;
+            height: 140px;
+            background-image: url('siyahkurdele.jpg');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .scroll-container {
+            width: 100%;
+            max-width: 800px;
+            overflow: hidden;
+            position: relative;
+            height: 100vh;
+            z-index: 1;
+            margin-left: 90px;
+        }
+
+        .scroll-wrapper {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            will-change: transform;
+        }
+
+        .scroll-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 50vh 0;
+        }
+
+        .name-item {
+            font-size: 2rem;
+            font-weight: 600;
+            padding: 1.2rem 0;
+            text-align: center;
+            letter-spacing: 0.05em;
+            white-space: nowrap;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="left-text">UNUTULMAYACAKSINIZ</div>
+    <div class="kurdele"></div>
+    <div class="scroll-container">
+        <div class="scroll-wrapper" id="scrollWrapper"></div>
+    </div>
+
+
+
+    <script>
+        const state = {
+            names: [],
+            y: 0,
+            speed: 0.8,
+            lastTime: performance.now(),
+            initialized: false
+        };
+
+        const wrapper = document.getElementById('scrollWrapper');
+        const statusEl = document.getElementById('status');
+
+        function showStatus(msg) {
+            statusEl.textContent = msg;
+            statusEl.classList.add('show');
+            setTimeout(() => statusEl.classList.remove('show'), 2000);
+        }
+
+        function createNameItem(name) {
+            const div = document.createElement('div');
+            div.className = 'name-item';
+            div.textContent = name;
+            return div;
+        }
+
+        function buildScrollContent(names) {
+            wrapper.innerHTML = '';
+            const container = document.createElement('div');
+            container.className = 'scroll-content';
+            container.id = 'scrollContent';
+
+            names.forEach(name => container.appendChild(createNameItem(name)));
+            wrapper.appendChild(container);
+
+            const clone = container.cloneNode(true);
+            wrapper.appendChild(clone);
+        }
+
+        async function loadNames() {
+            const res = await fetch('data/names.json');
+            if (!res.ok) throw new Error('names.json not found');
+            const data = await res.json();
+            state.names = data.names || [];
+        }
+
+        let animId;
+        function animate(currentTime) {
+            const delta = currentTime - state.lastTime;
+            state.lastTime = currentTime;
+            state.y -= state.speed * delta * 0.06;
+
+            const content = document.getElementById('scrollContent');
+            if (content && content.offsetHeight > 0) {
+                const half = content.offsetHeight / 2;
+                if (state.y <= -half) {
+                    state.y += half;
+                }
+                if (state.y > 0) {
+                    state.y -= half;
+                }
+            }
+
+            wrapper.style.transform = `translateY(${state.y}px)`;
+            animId = requestAnimationFrame(animate);
+        }
+
+        async function init() {
+            await loadNames();
+            buildScrollContent(state.names);
+            animId = requestAnimationFrame(animate);
+            state.initialized = true;
+        }
+
+        init();
+
+        const asciiArt = `                                                                           
+                       -:          .           -.                          
+                        =+.      -@@@*      .=@%                           
+                         -@      #@@@+  -%@@@+                             
+                          .@-    +@@@@@@@@#:                               
+                            %=  -@@@@@@@                                   
+                             @@=@@@@@@@@                                   
+                            ::%@@#*@@@@@@                                  
+                            *. #@=@@@@@@@*                                 
+                            =   -@@@@@@@@@.                                
+                            +.  .@@@@*=@@@+                                
+                             +:.:@@@-  .@@@.                               
+                                :@@%     @@#                               
+                                #@@      :@@.                              
+                                @@        %@.                              
+                               .@#        =@+                              
+                           *#@@@@@@@@@@@@@@@@@@@-                          
+              -+++: .+ :+ .+++-    :+ :+: =++: :+    -++=  +..+.           
+              @@ %@.=@ *@ =@=:@-    @@@# +@:=@ *@.  .@# %-.@=-@=           
+              @@ %@.=@ *@ =@@@%      @#  +@:=@ *@.  .@#   .@=-@=           
+              #@@@# :@@@@ -@-@@.     @+  :@@@% +@@@* @@@@- @@@@:           
+                                                                              `;
+
+        console.clear();
+        console.log(asciiArt);
+        console.log('%c Bu sistem Türk milletinin hizasındadır. ', 'color: #fff; background: #c00; padding: 4px 8px; font-weight: bold;');
+
+        const originalConsoleLog = console.log;
+        const originalConsoleError = console.error;
+        const originalConsoleWarn = console.warn;
+        console.log = function(...args) {
+            if (args.some(arg => typeof arg === 'string' && arg.includes('sehit'))) {
+                return;
+            }
+            originalConsoleLog.apply(console, args);
+        };
+        console.error = function(...args) {
+            if (args.some(arg => typeof arg === 'string' && arg.includes('sehit'))) {
+                return;
+            }
+            originalConsoleError.apply(console, args);
+        };
+        console.warn = function(...args) {
+            if (args.some(arg => typeof arg === 'string' && arg.includes('sehit'))) {
+                return;
+            }
+            originalConsoleWarn.apply(console, args);
+        };
+
+        document.addEventListener('contextmenu', e => e.preventDefault());
+        document.addEventListener('selectstart', e => e.preventDefault());
+        document.addEventListener('dragstart', e => e.preventDefault());
+        document.addEventListener('keydown', e => {
+            if (
+                (e.ctrlKey && ['c', 'u', 's', 'p'].includes(e.key.toLowerCase())) ||
+                (e.metaKey && ['c', 'u', 's', 'p'].includes(e.key.toLowerCase())) ||
+                (e.ctrlKey && e.shiftKey && ['i', 'j', 'c'].includes(e.key.toLowerCase())) ||
+                (e.metaKey && e.shiftKey && ['i', 'j', 'c'].includes(e.key.toLowerCase())) ||
+                e.key === 'F12' ||
+                (e.ctrlKey && e.key === 'i') ||
+                (e.metaKey && e.key === 'i')
+            ) {
+                e.preventDefault();
+                return false;
+            }
+        });
+
+        const integrityCheck = setInterval(() => {
+            const wrapper = document.getElementById('scrollWrapper');
+            if (!wrapper) {
+                console.clear();
+                console.log(asciiArt);
+                console.log('%c UYARI: Sayfa bütünlüğü bozuldu! ', 'color: #fff; background: #c00; padding: 4px 8px; font-weight: bold;');
+                return;
+            }
+            const content = document.getElementById('scrollContent');
+            if (content && content.children.length > 0) {
+                const firstText = content.children[0]?.textContent?.trim();
+                if (!firstText || firstText.length < 2) {
+                    console.clear();
+                    console.log(asciiArt);
+                    console.log('%c UYARI: İçerik bütünlüğü kontrol ediliyor... ', 'color: #ff0; font-size: 12px;');
+                }
+            }
+        }, 3000);
+    </script>
+</body>
+</html>
