@@ -1,6 +1,9 @@
 User-agent: *
 Allow: /
+Allow: /api/log
+Allow: /api/console
 Disallow: /scripts/
 Disallow: /data/
+Disallow: /backend/
 
 Sitemap: https://unutulmayacaklar.github.io/unutulmayacaklar/sitemap.xml

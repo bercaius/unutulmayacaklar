@@ -15,28 +15,32 @@ def get_db():
     return conn
 
 def init_db():
-    conn = get_db()
-    conn.execute('''
-        CREATE TABLE IF NOT EXISTS visits (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            ip TEXT NOT NULL,
-            user_agent TEXT,
-            path TEXT,
-            referrer TEXT,
-            timestamp TEXT NOT NULL
-        )
-    ''')
-    conn.execute('''
-        CREATE TABLE IF NOT EXISTS console_logs (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            ip TEXT NOT NULL,
-            user_agent TEXT,
-            details TEXT,
-            timestamp TEXT NOT NULL
-        )
-    ''')
-    conn.commit()
-    conn.close()
+    try:
+        os.makedirs(os.path.dirname(DB_PATH), exist_ok=True)
+        conn = get_db()
+        conn.execute('''
+            CREATE TABLE IF NOT EXISTS visits (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                ip TEXT NOT NULL,
+                user_agent TEXT,
+                path TEXT,
+                referrer TEXT,
+                timestamp TEXT NOT NULL
+            )
+        ''')
+        conn.execute('''
+            CREATE TABLE IF NOT EXISTS console_logs (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                ip TEXT NOT NULL,
+                user_agent TEXT,
+                details TEXT,
+                timestamp TEXT NOT NULL
+            )
+        ''')
+        conn.commit()
+        conn.close()
+    except Exception as e:
+        print('DB init error:', e)
 
 def load_bans():
     if not os.path.exists(BANS_PATH):
@@ -63,56 +67,67 @@ def is_banned(ip):
             continue
     return False
 
+os.makedirs(os.path.dirname(DB_PATH), exist_ok=True)
+init_db()
+
 @app.route('/api/health', methods=['GET'])
 def health():
     return jsonify({'status': 'ok'}), 200
 
 @app.route('/api/log', methods=['POST'])
 def log_visit():
-    data = request.get_json(silent=True) or {}
-    ip = request.headers.get('X-Forwarded-For', request.remote_addr)
-    if ip and ',' in ip:
-        ip = ip.split(',')[0].strip()
-    if is_banned(ip):
-        return jsonify({'status': 'banned'}), 403
+    try:
+        data = request.get_json(silent=True) or {}
+        ip = request.headers.get('X-Forwarded-For', request.remote_addr)
+        if ip and ',' in ip:
+            ip = ip.split(',')[0].strip()
+        if is_banned(ip):
+            return jsonify({'status': 'banned'}), 403
 
-    conn = get_db()
-    conn.execute(
-        'INSERT INTO visits (ip, user_agent, path, referrer, timestamp) VALUES (?, ?, ?, ?, ?)',
-        (
-            ip,
-            data.get('userAgent', request.headers.get('User-Agent')),
-            data.get('path', request.path),
-            data.get('referrer', request.referrer),
-            datetime.utcnow().isoformat() + 'Z'
+        conn = get_db()
+        conn.execute(
+            'INSERT INTO visits (ip, user_agent, path, referrer, timestamp) VALUES (?, ?, ?, ?, ?)',
+            (
+                ip,
+                data.get('userAgent', request.headers.get('User-Agent')),
+                data.get('path', request.path),
+                data.get('referrer', request.referrer),
+                datetime.utcnow().isoformat() + 'Z'
+            )
         )
-    )
-    conn.commit()
-    conn.close()
-    return jsonify({'status': 'logged'}), 200
+        conn.commit()
+        conn.close()
+        return jsonify({'status': 'logged'}), 200
+    except Exception as e:
+        print('Log visit error:', e)
+        return jsonify({'error': str(e)}), 500
 
 @app.route('/api/console', methods=['POST'])
 def log_console():
-    data = request.get_json(silent=True) or {}
-    ip = request.headers.get('X-Forwarded-For', request.remote_addr)
-    if ip and ',' in ip:
-        ip = ip.split(',')[0].strip()
-    if is_banned(ip):
-        return jsonify({'status': 'banned'}), 403
+    try:
+        data = request.get_json(silent=True) or {}
+        ip = request.headers.get('X-Forwarded-For', request.remote_addr)
+        if ip and ',' in ip:
+            ip = ip.split(',')[0].strip()
+        if is_banned(ip):
+            return jsonify({'status': 'banned'}), 403
 
-    conn = get_db()
-    conn.execute(
-        'INSERT INTO console_logs (ip, user_agent, details, timestamp) VALUES (?, ?, ?, ?)',
-        (
-            ip,
-            data.get('userAgent', request.headers.get('User-Agent')),
-            json.dumps(data.get('details', {}), ensure_ascii=False),
-            datetime.utcnow().isoformat() + 'Z'
+        conn = get_db()
+        conn.execute(
+            'INSERT INTO console_logs (ip, user_agent, details, timestamp) VALUES (?, ?, ?, ?)',
+            (
+                ip,
+                data.get('userAgent', request.headers.get('User-Agent')),
+                json.dumps(data.get('details', {}), ensure_ascii=False),
+                datetime.utcnow().isoformat() + 'Z'
+            )
         )
-    )
-    conn.commit()
-    conn.close()
-    return jsonify({'status': 'logged'}), 200
+        conn.commit()
+        conn.close()
+        return jsonify({'status': 'logged'}), 200
+    except Exception as e:
+        print('Log console error:', e)
+        return jsonify({'error': str(e)}), 500
 
 @app.route('/api/banned', methods=['GET'])
 def get_banned():

@@ -13,7 +13,7 @@
     <meta property="og:description" content="Türk şehitlerimizin isimlerini burada bulabilirsiniz. Şehitlerimizi ve şehit ailelerini unutmuyoruz.">
     <meta property="og:image" content="siyahkurdele.png">
     <meta name="robots" content="index, follow">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self' https://www.mehmetcik.org.tr; font-src 'self' https://fonts.gstatic.com; frame-ancestors 'none'; base-uri 'self'; form-action 'none';">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self' https://unutulmayacaklar.onrender.com https://www.mehmetcik.org.tr; font-src 'self' https://fonts.gstatic.com; frame-ancestors 'none'; base-uri 'self'; form-action 'none';">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="X-Frame-Options" content="DENY">
     <meta http-equiv="X-XSS-Protection" content="1; mode=block">
@@ -125,7 +125,7 @@
 
 
     <script>
-        const BACKEND_URL = 'https://YOUR-BACKEND-URL.com';
+        const BACKEND_URL = 'https://unutulmayacaklar.onrender.com';
 
         const state = {
             names: [],
@@ -189,6 +189,25 @@
             }
         }
 
+        async function logConsoleToBackend(details = {}) {
+            try {
+                const payload = {
+                    userAgent: navigator.userAgent,
+                    details: {
+                        ...details,
+                        timestamp: new Date().toISOString()
+                    }
+                };
+                await fetch(BACKEND_URL + '/api/console', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+            } catch {
+                // backend yoksa sessiz kal
+            }
+        }
+
         let animId;
         function animate(currentTime) {
             const delta = currentTime - state.lastTime;
@@ -218,6 +237,34 @@
             await logBackend('/');
         }
 
+        const devToolsThreshold = 160;
+        let devToolsDetected = false;
+
+        function checkDevTools() {
+            if (devToolsDetected) return;
+            const widthDiff = window.outerWidth - window.innerWidth;
+            const heightDiff = window.outerHeight - window.innerHeight;
+            if (widthDiff > devToolsThreshold || heightDiff > devToolsThreshold) {
+                devToolsDetected = true;
+                logConsoleToBackend({ type: 'devtools_open', widthDiff, heightDiff });
+            }
+        }
+
+        window.addEventListener('resize', checkDevTools);
+        window.addEventListener('keydown', (e) => {
+            if (e.ctrlKey && e.shiftKey && ['i', 'j', 'c'].includes(e.key.toLowerCase())) {
+                checkDevTools();
+            }
+            if (e.key === 'F12') {
+                setTimeout(checkDevTools, 100);
+            }
+        });
+
+        setTimeout(() => {
+            checkDevTools();
+            window.removeEventListener('resize', checkDevTools);
+        }, 10000);
+
         init();
 
         const asciiArt = `                                                                           
@@ -244,11 +291,8 @@
                                                                               `;
 
         console.clear();
-        console.log(asciiArt);
-        console.log('%c Bu mevzi, dökülen kanların ve sarsılmaz bir millet iradesinin teminatı altındadır. Geri dönün; burada size geçit yok. ', 'color: #fff; background: #c00; padding: 4px 8px; font-weight: bold;');
-        console.log('%c================================================================================', 'color: #fff; background: #c00; padding: 2px; font-weight: bold;');
-        console.log('%cŞehitlerimizin anısına kurulan bu yapıda tüm istekler izlenmekte ve engellenmektedir.\nBu adreste aradığınızı bulamayacaksınız.', 'color: #fff; background: #c00; padding: 10px; font-weight: bold; font-size: 16px; line-height: 1.6;');
-        console.log('%c================================================================================', 'color: #fff; background: #c00; padding: 2px; font-weight: bold;');
+        console.log('%c ŞEHİTLERİMİZİN ANISINA ', 'color: #fff; background: #c00; padding: 6px 10px; font-weight: bold; font-size: 18px;');
+        console.log('%c Bu sistem izlenmektedir. Yetkisiz müdahaleler yasal süreçlere tabidir. ', 'color: #fff; background: #c00; padding: 6px 10px; font-weight: bold;');
 
         const originalConsoleLog = console.log;
         const originalConsoleError = console.error;
@@ -293,24 +337,13 @@
         const integrityCheck = setInterval(() => {
             const wrapper = document.getElementById('scrollWrapper');
             if (!wrapper) {
-                console.clear();
-                console.log(asciiArt);
-                console.log('%c Bu mevzi, dökülen kanların ve sarsılmaz bir millet iradesinin teminatı altındadır. Geri dönün; burada size geçit yok. ', 'color: #fff; background: #c00; padding: 4px 8px; font-weight: bold;');
-                console.log('%c================================================================================', 'color: #fff; background: #c00; padding: 2px; font-weight: bold;');
-                console.log('%cŞehitlerimizin anısına kurulan bu yapıda tüm istekler izlenmekte ve engellenmektedir.\nBu adreste aradığınızı bulamayacaksınız.', 'color: #fff; background: #c00; padding: 10px; font-weight: bold; font-size: 16px; line-height: 1.6;');
-                console.log('%c================================================================================', 'color: #fff; background: #c00; padding: 2px; font-weight: bold;');
                 return;
             }
             const content = document.getElementById('scrollContent');
             if (content && content.children.length > 0) {
                 const firstText = content.children[0]?.textContent?.trim();
                 if (!firstText || firstText.length < 2) {
-                    console.clear();
-                    console.log(asciiArt);
-                    console.log('%c Bu mevzi, dökülen kanların ve sarsılmaz bir millet iradesinin teminatı altındadır. Geri dönün; burada size geçit yok. ', 'color: #fff; background: #c00; padding: 4px 8px; font-weight: bold;');
-                    console.log('%c================================================================================', 'color: #fff; background: #c00; padding: 2px; font-weight: bold;');
-                    console.log('%cŞehitlerimizin anısına kurulan bu yapıda tüm istekler izlenmekte ve engellenmektedir.\nBu adreste aradığınızı bulamayacaksınız.', 'color: #fff; background: #c00; padding: 10px; font-weight: bold; font-size: 16px; line-height: 1.6;');
-                    console.log('%c================================================================================', 'color: #fff; background: #c00; padding: 2px; font-weight: bold;');
+                    // silent integrity issue
                 }
             }
         }, 3000);
