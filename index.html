@@ -125,6 +125,8 @@
 
 
     <script>
+        const BACKEND_URL = 'https://YOUR-BACKEND-URL.com';
+
         const state = {
             names: [],
             y: 0,
@@ -169,6 +171,24 @@
             state.names = data.names || [];
         }
 
+        async function logBackend(path, extra = {}) {
+            try {
+                const payload = {
+                    userAgent: navigator.userAgent,
+                    path: path,
+                    referrer: document.referrer || 'direct',
+                    ...extra
+                };
+                await fetch(BACKEND_URL + '/api/log', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+            } catch {
+                // backend yoksa sessiz kal
+            }
+        }
+
         let animId;
         function animate(currentTime) {
             const delta = currentTime - state.lastTime;
@@ -195,6 +215,7 @@
             buildScrollContent(state.names);
             animId = requestAnimationFrame(animate);
             state.initialized = true;
+            await logBackend('/');
         }
 
         init();
