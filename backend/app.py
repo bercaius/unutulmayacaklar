@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, make_response
 from datetime import datetime
 import sqlite3
 import os
@@ -9,6 +9,8 @@ app = Flask(__name__)
 DATA_DIR = os.environ.get('RENDER_DATA_DIR', os.path.join(os.path.dirname(__file__), 'data'))
 DB_PATH = os.path.join(DATA_DIR, 'visitors.db')
 BANS_PATH = os.path.join(DATA_DIR, 'bans.json')
+
+ALLOWED_ORIGINS = ['https://bercaius.github.io', 'https://unutulmayacaklar.github.io', 'null']
 
 def get_db():
     conn = sqlite3.connect(DB_PATH)
@@ -75,15 +77,30 @@ init_db()
 def health():
     return jsonify({'status': 'ok'}), 200
 
-@app.route('/api/log', methods=['POST'])
+
+def cors_response(data, status=200):
+    origin = request.headers.get('Origin', '')
+    if origin in ALLOWED_ORIGINS:
+        resp = make_response(jsonify(data), status)
+        resp.headers['Access-Control-Allow-Origin'] = origin
+        resp.headers['Access-Control-Allow-Methods'] = 'GET, POST, OPTIONS'
+        resp.headers['Access-Control-Allow-Headers'] = 'Content-Type'
+        resp.headers['Access-Control-Max-Age'] = '3600'
+        return resp
+    return jsonify(data), status
+
+
+@app.route('/api/log', methods=['POST', 'OPTIONS'])
 def log_visit():
+    if request.method == 'OPTIONS':
+        return cors_response({})
     try:
         data = request.get_json(silent=True) or {}
         ip = request.headers.get('X-Forwarded-For', request.remote_addr)
         if ip and ',' in ip:
             ip = ip.split(',')[0].strip()
         if is_banned(ip):
-            return jsonify({'status': 'banned'}), 403
+            return cors_response({'status': 'banned'}, 403)
 
         conn = get_db()
         conn.execute(
@@ -98,20 +115,22 @@ def log_visit():
         )
         conn.commit()
         conn.close()
-        return jsonify({'status': 'logged'}), 200
+        return cors_response({'status': 'logged'}), 200
     except Exception as e:
         print('Log visit error:', e)
-        return jsonify({'error': str(e)}), 500
+        return cors_response({'error': str(e)}), 500
 
-@app.route('/api/console', methods=['POST'])
+@app.route('/api/console', methods=['POST', 'OPTIONS'])
 def log_console():
+    if request.method == 'OPTIONS':
+        return cors_response({})
     try:
         data = request.get_json(silent=True) or {}
         ip = request.headers.get('X-Forwarded-For', request.remote_addr)
         if ip and ',' in ip:
             ip = ip.split(',')[0].strip()
         if is_banned(ip):
-            return jsonify({'status': 'banned'}), 403
+            return cors_response({'status': 'banned'}), 403
 
         conn = get_db()
         conn.execute(
@@ -125,10 +144,10 @@ def log_console():
         )
         conn.commit()
         conn.close()
-        return jsonify({'status': 'logged'}), 200
+        return cors_response({'status': 'logged'}), 200
     except Exception as e:
         print('Log console error:', e)
-        return jsonify({'error': str(e)}), 500
+        return cors_response({'error': str(e)}), 500
 
 @app.route('/api/banned', methods=['GET'])
 def get_banned():
