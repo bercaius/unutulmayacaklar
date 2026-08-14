@@ -208,6 +208,18 @@
             }
         }
 
+        window.addEventListener('error', function(e) {
+            if (e && e.target && e.target.src && e.target.src.includes(BACKEND_URL)) {
+                e.stopPropagation();
+            }
+        }, true);
+
+        window.addEventListener('unhandledrejection', function(e) {
+            if (e && e.reason && typeof e.reason === 'string' && e.reason.includes('Failed to fetch')) {
+                e.preventDefault();
+            }
+        });
+
         let animId;
         function animate(currentTime) {
             const delta = currentTime - state.lastTime;
