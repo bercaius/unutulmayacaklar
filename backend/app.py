@@ -6,8 +6,9 @@ import json
 import ipaddress
 
 app = Flask(__name__)
-DB_PATH = os.path.join(os.path.dirname(__file__), 'data', 'visitors.db')
-BANS_PATH = os.path.join(os.path.dirname(__file__), 'data', 'bans.json')
+DATA_DIR = os.environ.get('RENDER_DATA_DIR', os.path.join(os.path.dirname(__file__), 'data'))
+DB_PATH = os.path.join(DATA_DIR, 'visitors.db')
+BANS_PATH = os.path.join(DATA_DIR, 'bans.json')
 
 def get_db():
     conn = sqlite3.connect(DB_PATH)
