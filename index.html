@@ -97,7 +97,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 50vh 0;
+            padding: 0;
         }
 
         .name-item {
@@ -130,9 +130,11 @@
         const state = {
             names: [],
             y: 0,
-            speed: 0.8,
+            speed: 0.3,
+            targetSpeed: 1.0,
             lastTime: performance.now(),
-            initialized: false
+            initialized: false,
+            started: false
         };
 
         const wrapper = document.getElementById('scrollWrapper');
@@ -224,16 +226,34 @@
         function animate(currentTime) {
             const delta = currentTime - state.lastTime;
             state.lastTime = currentTime;
+
+            if (!state.started) {
+                if (delta > 0) {
+                    state.started = true;
+                    state.lastTime = currentTime;
+                }
+                wrapper.style.transform = `translateY(${state.y}px)`;
+                animId = requestAnimationFrame(animate);
+                return;
+            }
+
+            if (state.speed < state.targetSpeed) {
+                state.speed += delta * 0.015;
+                if (state.speed > state.targetSpeed) {
+                    state.speed = state.targetSpeed;
+                }
+            }
+
             state.y -= state.speed * delta * 0.06;
 
             const content = document.getElementById('scrollContent');
             if (content && content.offsetHeight > 0) {
-                const half = content.offsetHeight / 2;
-                if (state.y <= -half) {
-                    state.y += half;
+                const fullHeight = content.offsetHeight / 2;
+                if (state.y <= -fullHeight) {
+                    state.y += fullHeight;
                 }
                 if (state.y > 0) {
-                    state.y -= half;
+                    state.y -= fullHeight;
                 }
             }
 
@@ -242,19 +262,6 @@
         }
 
         async function init() {
-            try {
-                const banRes = await fetch(BACKEND_URL + '/api/check-ban');
-                if (banRes.ok) {
-                    const banData = await banRes.json();
-                    if (banData.banned) {
-                        document.body.innerHTML = '<div style="background:#000;color:#fff;height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:20px;font-size:18px;font-weight:600;line-height:1.6;"><div>Erişim kısıtlanmıştır.<br>Bu işlem yasal süreçlere tabidir.</div></div>';
-                        return;
-                    }
-                }
-            } catch {
-                // backend yoksa devam et
-            }
-
             await loadNames();
             buildScrollContent(state.names);
             animId = requestAnimationFrame(animate);
