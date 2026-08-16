@@ -5,12 +5,16 @@ on:
     - cron: '*/5 * * * *'
   workflow_dispatch:
 
+concurrency:
+  group: update-sehit-names
+  cancel-in-progress: false
+
 jobs:
   update-names:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     permissions:
       contents: write
-
     steps:
       - uses: actions/checkout@v4
 
@@ -22,6 +26,19 @@ jobs:
       - name: Fetch and update names
         run: python scripts/fetch_names.py
 
+      - name: Validate names.json
+        run: |
+          python - <<'PY'
+          import json, sys
+          with open('data/names.json', encoding='utf-8') as f:
+              data = json.load(f)
+          names = data.get('names', [])
+          assert isinstance(names, list) and len(names) > 0, 'names.json empty or invalid'
+          for n in names:
+              assert isinstance(n, dict) and n.get('name'), 'invalid entry: %r' % n
+          print('VALID: %d entries' % len(names))
+          PY
+
       - name: Commit and push if changed
         run: |
           git config --global user.name 'github-actions[bot]'
@@ -30,6 +47,6 @@ jobs:
             echo 'No changes'
           else
             git add data/names.json
-            git commit -m 'Update sehit names'
+            git commit -m 'Update sehit names [skip ci]'
             git push
           fi

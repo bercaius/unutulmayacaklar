@@ -1,206 +1,1014 @@
 {
     "names": [
-        "Abdulhalık ARAZ",
-        "Abdulkadir PEKTAŞ",
-        "Abdullah ÇAM",
-        "Abdulsamet ÖZEN",
-        "Abdulselam HALAT",
-        "Adem DÖĞÜŞĞEN",
-        "Adem GÜL",
-        "Adil KABAKLI",
-        "Ahmet ALTUN",
-        "Ahmet SUNA",
-        "Ahmet TAŞ",
-        "Ahmet TEZCAN",
-        "Akın BULUŞ",
-        "Ali Aydar",
-        "Ali ÖZTAŞ",
-        "Arif SUBAŞOĞLU",
-        "Arif TUĞ",
-        "Ayhan ERDOĞAN",
-        "Bahadır AYDIN",
-        "Baki AFŞAR",
-        "Barbaros YILMAZ",
-        "Barış AKKABAK",
-        "Barış AYBEK",
-        "Bayram KARDAŞ",
-        "Bayram KAVCI",
-        "Berat SAĞIRKAYA",
-        "Caner MAYENDAĞI",
-        "Celal MUNGAN",
-        "Cihat ŞENGİL",
-        "Coşkun SEKMEN",
-        "Daha ÇELİK",
-        "Doğan ACAR",
-        "Doğan KAYA",
-        "Ebuzer ÖZYOLCİ",
-        "Emin DAŞCI",
-        "Emrah ÇALKIN",
-        "Emre GÜNALAY",
-        "Emre Kaan ARLI",
-        "Enes KOÇ",
-        "Eren TAŞKIN",
-        "Erhan GÜRBÜZ",
-        "Erkan ÖZDEMİR",
-        "Evren KARA",
-        "Eyüp GÜNER",
-        "Eyüp HACİOĞLU",
-        "Eyüp ÖKSÜZ",
-        "Faik YÜCE",
-        "Fatih YENİAY",
-        "Fatih ÇAYBAŞI",
-        "Fehmi BARCIN",
-        "Ferhat ERSECEN",
-        "Ferhat YILDIRIM",
-        "Fuat KINAY",
-        "Gökhan AYDER",
-        "Gökhan DAĞBAY",
-        "Gökhan ÇAKIR",
-        "Göksal Mustafa AĞAÇYETİŞTİREN",
-        "Gürkan Necati YENİKAPI",
-        "Hakan ATAN",
-        "Halil SELTAN",
-        "Hamza YILDIRIM",
-        "Harun AYDIN",
-        "Hasan İLHAN",
-        "Hayrullah Halit KARAMAN",
-        "Hüseyin KARACA",
-        "Hüseyin KAVALBACAK",
-        "Hüseyin KOROÇ",
-        "Hüseyin Tolga HEPGÜL",
-        "Hüsnü ÖZEL",
-        "Kadir BOZAN",
-        "Kadir GÖRGÜLÜ",
-        "Kadir YILDIZ",
-        "Kamil TUNÇ",
-        "Kenan DÖNGEL",
-        "Kerim ARSLAN",
-        "Latif AŞIKMUSLU",
-        "Mansur CENGİZ",
-        "Medet MAT",
-        "Mehmet BAKAN",
-        "Mehmet Emin KOTANOĞLU",
-        "Mehmet GÜNAY",
-        "Mehmet Halil BARKIN",
-        "Mehmet KAYA",
-        "Mehmet KAŞIK",
-        "Mehmet VOLKAN",
-        "Melih SANCAR",
-        "Menduh ÇELİK",
-        "Mert Can SÜMBÜL",
-        "Mesut YAŞAR",
-        "Mikail KAYA",
-        "Muhammed Ali OCAK",
-        "Muhammed Ali SARI",
-        "Muhammed CAN",
-        "Muhammed Furkan DEMİREL",
-        "Muhammed İslam ALTUĞ",
-        "Muhammet Can BİÇİCİ",
-        "Muharrem ÖKSÜZ",
-        "Murat GÖZAL",
-        "Mustafa BERBER",
-        "Mustafa BİLGİLİ",
-        "Mustafa DAĞLI",
-        "Mustafa KARAKURT",
-        "Mustafa NERKİS",
-        "Mustafa TURUL",
-        "Mustafa cihan",
-        "Mustafa ÖNLEMEÇ",
-        "Mustafa ÖZEL",
-        "Muttalip SOYLU",
-        "Mücahit ŞİMŞEK",
-        "Mümin PINARDAĞ",
-        "Müslüm ALTINTAŞ",
-        "Oktay SALAR",
-        "Onur SÜNNÜOĞLU",
-        "Onur YAMAN",
-        "Onur YAVAN",
-        "Orhan Faruk BAYTEKİN",
-        "Orhan İRKARLI",
-        "Orkun Alp ARSLAN",
-        "Osman ER",
-        "Osman KARAĞLI",
-        "Oğuz ARSLAN",
-        "Oğuz Han KARACA",
-        "Oğuzhan DEMİR",
-        "Oğuzhan ERDOĞAN",
-        "Ramazan FAKÇI",
-        "Ramazan KÖSE",
-        "Ramazan YEL",
-        "Ramazan ÖZMEN",
-        "Raşit YÜCEL",
-        "Recep BEYCUR",
-        "Recep BODUR",
-        "Recep MÜTEVELLİOĞLU",
-        "Recep YILDIRIM",
-        "Reşit YILDIZ",
-        "Rıdvan SAĞDIÇ",
-        "Sabır BİNEN",
-        "Salih BULUT",
-        "Samat KAYMAKÇI",
-        "Samet ÇALDIR",
-        "Sedat KAYA",
-        "Sedat MEKAN",
-        "Sedat SORGUN",
-        "Sefa UZUN",
-        "Sefanur PARHAN",
-        "Sefter TAŞ",
-        "Selim GEDİK",
-        "Semih ERDOĞAN",
-        "Serdar AMAK",
-        "Sezai EKŞİOĞLU",
-        "Sinan GÖKTAŞ",
-        "Sinan HAMZA",
-        "Soner SÜYLÜ",
-        "Suat SURKİ",
-        "Süleyman ALTINDAĞ",
-        "Süleyman SUNGUR",
-        "Taner KAYA",
-        "Tarık TARCAN",
-        "Tayfur ÇANKAYA",
-        "Tevfik Yasin KESER",
-        "Tunahan DOKTUR",
-        "Uğur KORKMAZ",
-        "Uğur ÇAKMAK",
-        "Uğur İPEK",
-        "Uğurcan IŞIK",
-        "Vedat DOLANÇAY",
-        "Vedat SARIKAYA",
-        "Volkan KARATEPE",
-        "Volkan SOY",
-        "Yiğit ŞAHAN",
-        "Yunus Emre DURAN",
-        "Yunus KAYMAK",
-        "Yunus YILMAZ",
-        "Yusuf BEYLEM",
-        "Yusuf GÜRLER",
-        "Yusuf SOFİOĞLU",
-        "Yusuf YAVUZ",
-        "Yusuf ÖNDER",
-        "Yılmaz Oğuzhan KULA",
-        "Zekeriya ALTUNOK",
-        "Çağatay Necati DİNÇ",
-        "Çağlar İNAN",
-        "Çınar TAŞ",
-        "Ömer ERÜSTÜN",
-        "Ömer Kağan KANDEMİR",
-        "Ömer SARI",
-        "Ömer YALÇIN",
-        "Ömer ÖNER",
-        "Ömer ÖZAVCI",
-        "Özgür BEDİR",
-        "Özkan ÖZDEN",
-        "Ümit ÇELİK",
-        "İbrahim ÖZKUR",
-        "İdris GÜLEK",
-        "İdris SOLMAZ",
-        "İlhami ÇELEBİ",
-        "İsa ERÇETİN",
-        "İsa KARAKAŞ",
-        "İsa NAZLIM",
-        "İsmail ÇİL",
-        "Şahabettin ATAK",
-        "Şahin TAŞKIN",
-        "Şevki Eren YATKIN"
+        {
+            "name": "Abdulhalık ARAZ",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/157261-16__tnk__er_abdulhal_k_araz__04_08_2015__van.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=157261"
+        },
+        {
+            "name": "Abdulkadir PEKTAŞ",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/325297-15__j__er_abdulkadir_pekta__04_08_2015__diyarbakir.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=325297"
+        },
+        {
+            "name": "Abdullah ÇAM",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/163640-abdullah___am_18_04_2020_mard__n.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=163640"
+        },
+        {
+            "name": "Abdulsamet ÖZEN",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/154111-sehitmuonbabdulsametozenkocaeli17122016.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=154111"
+        },
+        {
+            "name": "Abdulselam HALAT",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/411018-abdulselam_halat__14_06_2018__anliurfa.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=411018"
+        },
+        {
+            "name": "Adem DÖĞÜŞĞEN",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/213242-4__p__er_adem_do_u_en__21_07_2014__hatay.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=213242"
+        },
+        {
+            "name": "Adem GÜL",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/743562-18__j__er_adem_gul__02_05_2016__tekirda.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=743562"
+        },
+        {
+            "name": "Adil KABAKLI",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/240585-adil_kabakli_14022021_gaziantep.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=240585"
+        },
+        {
+            "name": "Ahmet ALTUN",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/926281-sehitahmetaltunerzurum19072016.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=926281"
+        },
+        {
+            "name": "Ahmet SUNA",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/586387-sehitahmetsuna10082016kahramanmaras.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=586387"
+        },
+        {
+            "name": "Ahmet TAŞ",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/460797-sehitponbahmettaskirsehir171220161.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=460797"
+        },
+        {
+            "name": "Ahmet TEZCAN",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/647024-sehitjerahmettezcanmanisa16092016.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=647024"
+        },
+        {
+            "name": "Akın BULUŞ",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/620293-5__p__er_ak_n_bulu__26_02_2015__edirne.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=620293"
+        },
+        {
+            "name": "Ali Aydar",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/926440-ali_aydar_31012018_sanliurfa.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=926440"
+        },
+        {
+            "name": "Ali ÖZTAŞ",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/543791-4__hv__ul___er_ali_ozta__17_02_2016__adana.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=543791"
+        },
+        {
+            "name": "Arif SUBAŞOĞLU",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/15180-2__p__er_arif_suba_o_lu__09_02_2016__kocaeli.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=15180"
+        },
+        {
+            "name": "Arif TUĞ",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/221885-sehitpcvsariftugerzurum17122016.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=221885"
+        },
+        {
+            "name": "Ayhan ERDOĞAN",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/811510-17__p__er_ayhan_erdo_an__02_05_2016__bartin.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=811510"
+        },
+        {
+            "name": "Bahadır AYDIN",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/10957-19__j__cv___bahad_r_aydin__19_08_2015__bursa.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=10957"
+        },
+        {
+            "name": "Baki AFŞAR",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/332411-baki_af_ar__16_04_2018__corum.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=332411"
+        },
+        {
+            "name": "Barbaros YILMAZ",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/848915-sehitbarbarosyilmazmersin29102016.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=848915"
+        },
+        {
+            "name": "Barış AKKABAK",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/165832-12__j__er_bar_akkabak__01_08_2015__antalya.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=165832"
+        },
+        {
+            "name": "Barış AYBEK",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/554293-18__p__onb__bar_aybek__11_08_2015__malatya.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=554293"
+        },
+        {
+            "name": "Bayram KARDAŞ",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/974427-sehitbayramkardasbitlis07112016.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=974427"
+        },
+        {
+            "name": "Bayram KAVCI",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/144304-sehitbayramkavci10082016corum.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=144304"
+        },
+        {
+            "name": "Berat SAĞIRKAYA",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/381079-5__p__er_berat_sa_irkaya__21_07_2014__ni_de.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=381079"
+        },
+        {
+            "name": "Caner MAYENDAĞI",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/23780-caner_mayendagi_27072020_samsun_.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=23780"
+        },
+        {
+            "name": "Celal MUNGAN",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/194540-15__is__er_celal_mungan__30_04_2016__irnak.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=194540"
+        },
+        {
+            "name": "Cihat ŞENGİL",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/109886-cihat_sendil_26082020_samsun.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=109886"
+        },
+        {
+            "name": "Coşkun SEKMEN",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/768873-7__p__er_co_kun_sekmen__30_06_2015__samsun.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=768873"
+        },
+        {
+            "name": "Daha ÇELİK",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/496545-mu__onb__daha_celik__11_10_2017__erzurum.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=496545"
+        },
+        {
+            "name": "Doğan ACAR",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/10254-17__j__ul___er_do_an_acar__10_08_2015__denizli.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=10254"
+        },
+        {
+            "name": "Doğan KAYA",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/804758-sehitdogankayasivas31072016.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=804758"
+        },
+        {
+            "name": "Ebuzer ÖZYOLCİ",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/429228-ebuzer_ozyolci__15_10_2018__a_ri.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=429228"
+        },
+        {
+            "name": "Emin DAŞCI",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/233075-8__p__er_emin_da_ci__28_07_2014__u_ak.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=233075"
+        },
+        {
+            "name": "Emrah ÇALKIN",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/330777-1__p__er_emrah_calkin__03_01_2015__tekirda.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=330777"
+        },
+        {
+            "name": "Emre GÜNALAY",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/917671-19__dz__p__er_emre_gunalay__25_12_2014__kutahya.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=917671"
+        },
+        {
+            "name": "Emre Kaan ARLI",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/412450-20__j__er_emre_kaan_arli__19_08_2015__kocaeli.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=412450"
+        },
+        {
+            "name": "Enes KOÇ",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/848072-enes_koc_08012022_istanbul.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=848072"
+        },
+        {
+            "name": "Eren TAŞKIN",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/653118-erentaskin06022023.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=653118"
+        },
+        {
+            "name": "Erhan GÜRBÜZ",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/360556-erhan_g__rb__z__04_10_2019__a__ri.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=360556"
+        },
+        {
+            "name": "Erkan ÖZDEMİR",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/605-sehiterkanozdemirduzce09102016.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=605"
+        },
+        {
+            "name": "Evren KARA",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/965353-sehitevrenkaramanisa09102016.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=965353"
+        },
+        {
+            "name": "Eyüp GÜNER",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/952383-p.-er-eyup-guner-17.10.2025-gaziantep.jpg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=952383"
+        },
+        {
+            "name": "Eyüp HACİOĞLU",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/77922-sehiteyuphacioglumalatya09102016.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=77922"
+        },
+        {
+            "name": "Eyüp ÖKSÜZ",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/107563-sehiteyupoksuzsamsun10072016.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=107563"
+        },
+        {
+            "name": "Faik YÜCE",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/427329-9__p__er_faik_yuce__06_07_2015__istanbul.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=427329"
+        },
+        {
+            "name": "Fatih YENİAY",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/656497-5__j__er_fatih_yeniay__18_02_2016_mardin.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=656497"
+        },
+        {
+            "name": "Fatih ÇAYBAŞI",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/376402-sehitfatihcaybasierzincan25082016.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=376402"
+        },
+        {
+            "name": "Fehmi BARCIN",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/946656-sehitpcvsfehmibarcinbursa17122016.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=946656"
+        },
+        {
+            "name": "Ferhat ERSECEN",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/641471-11__ikm__er_ferhat_ersecen__28_02_2016__erzincan.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=641471"
+        },
+        {
+            "name": "Ferhat YILDIRIM",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/913782-21__ikm__er_ferhat_yildirim__17_06_2016__diyarbakir.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=913782"
+        },
+        {
+            "name": "Fuat KINAY",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/671698-sehitjerfuatkinaydiyarbakir27102016.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=671698"
+        },
+        {
+            "name": "Gökhan AYDER",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/354072-sehitpergokhanaydersakarya01102016.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=354072"
+        },
+        {
+            "name": "Gökhan DAĞBAY",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/131776-3__p__er_gokhan_da_bay__05_06_2014__kocaeli.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=131776"
+        },
+        {
+            "name": "Gökhan ÇAKIR",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/324026-26__p__er_gokhan_cakir__10_09_2015__mu.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=324026"
+        },
+        {
+            "name": "Göksal Mustafa AĞAÇYETİŞTİREN",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/331306-sehitulscvsmustafaagacyetistirensinop17122016.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=331306"
+        },
+        {
+            "name": "Gürkan Necati YENİKAPI",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/541155-30__p__er_gurkan_necati_yenikapi__27_12_2015__izmir.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=541155"
+        },
+        {
+            "name": "Hakan ATAN",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/350820-hakan_atan__19_10_2018__adana.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=350820"
+        },
+        {
+            "name": "Halil SELTAN",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/491690-halilseltan05012023.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=491690"
+        },
+        {
+            "name": "Hamza YILDIRIM",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/427848-10__p__onb__hamza_yildirim__30_07_2015__ankara.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=427848"
+        },
+        {
+            "name": "Harun AYDIN",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/530656-sehitharunaydin16062017ankara.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=530656"
+        },
+        {
+            "name": "Hasan İLHAN",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/484628-sehitshherhasanilhandenizli17122016.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=484628"
+        },
+        {
+            "name": "Hayrullah Halit KARAMAN",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/287243-mhf.-er-hayrullah-halit-karaman-25.07.2025-.jpg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=287243"
+        },
+        {
+            "name": "Hüseyin KARACA",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/623514-sehitdzerhuseyinkaracaburdur18022017.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=623514"
+        },
+        {
+            "name": "Hüseyin KAVALBACAK",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/205832-sehithuseyinkavalbacakkonya23082016.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=205832"
+        },
+        {
+            "name": "Hüseyin KOROÇ",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/598667-sehitperhuseyinkorocsanliurfa22032017.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=598667"
+        },
+        {
+            "name": "Hüseyin Tolga HEPGÜL",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/723441-j__er_h_1_4_seyin_tolga_hepg_l__11_07_2017__a_zma_r.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=723441"
+        },
+        {
+            "name": "Hüsnü ÖZEL",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/39170-sehitperhusnuozel25052017kirsehir.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=39170"
+        },
+        {
+            "name": "Kadir BOZAN",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/239919-10__j__ul___er_kadir_bozan__20_10_2014__ni_de.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=239919"
+        },
+        {
+            "name": "Kadir GÖRGÜLÜ",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/238831-6__j__er_kadir_gorgulu__18_02_2016__anliurfa.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=238831"
+        },
+        {
+            "name": "Kadir YILDIZ",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/695670-18__p__onb__kadir_yildiz__09_12_2014__kastamonu.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=695670"
+        },
+        {
+            "name": "Kamil TUNÇ",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/953025-sehitshherkamiltuncafyon17122016.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=953025"
+        },
+        {
+            "name": "Kenan DÖNGEL",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/771443-sehitiserkenandongelsinop17122016.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=771443"
+        },
+        {
+            "name": "Kerim ARSLAN",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/872496-kerim_arslan_27072020_k__r__kkale.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=872496"
+        },
+        {
+            "name": "Latif AŞIKMUSLU",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/683122-sehitlatifasikmuslucankiri09102016.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=683122"
+        },
+        {
+            "name": "Mansur CENGİZ",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/846534-14__j__er_mansur_cengiz__02_08_2015__siirt.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=846534"
+        },
+        {
+            "name": "Medet MAT",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/646315-13__j__er_medet_mat__02_08_2015__adiyaman.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=646315"
+        },
+        {
+            "name": "Mehmet BAKAN",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/27197-5c5950a27fbb8.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=27197"
+        },
+        {
+            "name": "Mehmet Emin KOTANOĞLU",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/653726-mehmet_emin_kotano__lu__07_10_2019__erzurum.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=653726"
+        },
+        {
+            "name": "Mehmet GÜNAY",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/811182-mehmet_gunay_30_05_2020_hatay.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=811182"
+        },
+        {
+            "name": "Mehmet Halil BARKIN",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/735495-21__j__er_mehmet_halil_barkin__19_08_2015__irnak.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=735495"
+        },
+        {
+            "name": "Mehmet KAYA",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/864368-mehmet_kaya_06042019_siirt.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=864368"
+        },
+        {
+            "name": "Mehmet KAŞIK",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/794887-mehmet_ka_ik__09_11_20018__kahramanmara.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=794887"
+        },
+        {
+            "name": "Mehmet VOLKAN",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/494127-mehmet_volkan__16_04_2018__adiyaman.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=494127"
+        },
+        {
+            "name": "Melih SANCAR",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/723175-melih_sancar__09_11_20018__artv_n.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=723175"
+        },
+        {
+            "name": "Menduh ÇELİK",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/624913-menduh_cel_k__09_11_20018__anliurfa.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=624913"
+        },
+        {
+            "name": "Mert Can SÜMBÜL",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/117927-mertcansunbul06022023.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=117927"
+        },
+        {
+            "name": "Mesut YAŞAR",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/784829-sehitulsermesutyasargaziantep03022017.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=784829"
+        },
+        {
+            "name": "Mikail KAYA",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/370114-sehitmikailyasa27072016malatya.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=370114"
+        },
+        {
+            "name": "Muhammed Ali OCAK",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/69847-sehitponbaliocakyozgat17122016.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=69847"
+        },
+        {
+            "name": "Muhammed Ali SARI",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/851448-sehitalisarikirsehir31072016.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=851448"
+        },
+        {
+            "name": "Muhammed CAN",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/305894-6__p__onb__muhammed_can__26_02_2015__kir_ehir.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=305894"
+        },
+        {
+            "name": "Muhammed Furkan DEMİREL",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/960965-j__komd__er_muhammed_furkan_demirel__27_06_2017__ankara.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=960965"
+        },
+        {
+            "name": "Muhammed İslam ALTUĞ",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/270814-muhammed_islam_altug_24062019_yalova.png",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=270814"
+        },
+        {
+            "name": "Muhammet Can BİÇİCİ",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/398430-15__j__onb__muhammet_can_bicici__28_11_2014__nev_ehir.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=398430"
+        },
+        {
+            "name": "Muharrem ÖKSÜZ",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/599121-25__p__er_muharrem_oksuz__06_09_2015__konya.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=599121"
+        },
+        {
+            "name": "Murat GÖZAL",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/500640-23__j__er_murat_gozal__30_06_2016__mardin.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=500640"
+        },
+        {
+            "name": "Mustafa BERBER",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/855785-1__p__onb__mustafa_berber__07_01_2016__istanbul.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=855785"
+        },
+        {
+            "name": "Mustafa BİLGİLİ",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/824757-7__j__er_mustafa_bilgili__18_02_2016__amasya.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=824757"
+        },
+        {
+            "name": "Mustafa DAĞLI",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/332141-mustafa_dagli_27072020_mersin.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=332141"
+        },
+        {
+            "name": "Mustafa KARAKURT",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/239727-13__j__er_mustafa_karakurt__31_10_2014__sivas.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=239727"
+        },
+        {
+            "name": "Mustafa NERKİS",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/73020-5c594fc2f3ff2.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=73020"
+        },
+        {
+            "name": "Mustafa TURUL",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/946263-27__p__er_mustafa_turul__02_10_2015__sakarya.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=946263"
+        },
+        {
+            "name": "Mustafa cihan",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/381596-sehitponbmustafacihanosmaniye17122016.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=381596"
+        },
+        {
+            "name": "Mustafa ÖNLEMEÇ",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/225715-mustafa_inlemec_27062019_isparta.png",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=225715"
+        },
+        {
+            "name": "Mustafa ÖZEL",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/892602-12__j__er_mustafa_ozel__15_04_2016__trabzon.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=892602"
+        },
+        {
+            "name": "Muttalip SOYLU",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/440872-16__p__onb__muttalip_soylu__02_05_2016__ni_de.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=440872"
+        },
+        {
+            "name": "Mücahit ŞİMŞEK",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/275845-22__j__er_mucahit_im_ek__25_06_2016__kahramanmara.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=275845"
+        },
+        {
+            "name": "Mümin PINARDAĞ",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/273340-j__er_m_1_4_min_pinardaa__11_07_2017__bursa.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=273340"
+        },
+        {
+            "name": "Müslüm ALTINTAŞ",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/201077-muslum_altintas_14022021_gaziantep.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=201077"
+        },
+        {
+            "name": "Oktay SALAR",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/355482-oktay_salar_12052022_balikesir.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=355482"
+        },
+        {
+            "name": "Onur SÜNNÜOĞLU",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/427948-j__er_onur_s_nn_oa_lu__11_07_2017__gaza_antep.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=427948"
+        },
+        {
+            "name": "Onur YAMAN",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/215836-sehiteronuryamanankara10062017.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=215836"
+        },
+        {
+            "name": "Onur YAVAN",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/736250-onur_yavan__13_10_2019__samsun.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=736250"
+        },
+        {
+            "name": "Orhan Faruk BAYTEKİN",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/841468-orhan_faruk_baytekin__20_06_2018__balikesir.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=841468"
+        },
+        {
+            "name": "Orhan İRKARLI",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/330646-sehitiserorhanirkarlisanliurfa03102016.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=330646"
+        },
+        {
+            "name": "Orkun Alp ARSLAN",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/48416-sehitoalparslanaydin10072016.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=48416"
+        },
+        {
+            "name": "Osman ER",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/955049-sehitosmanerbilecik10072016.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=955049"
+        },
+        {
+            "name": "Osman KARAĞLI",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/514174-osman_kara_li__28_08_2018__konya.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=514174"
+        },
+        {
+            "name": "Oğuz ARSLAN",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/707001-10__j__ul___er_o_uz_arslan__21_02_2016__aydin.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=707001"
+        },
+        {
+            "name": "Oğuz Han KARACA",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/50420-sehitoguzhankaraca23112016erzurum.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=50420"
+        },
+        {
+            "name": "Oğuzhan DEMİR",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/400078-sehitoguzhandemirkocaeli19112016.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=400078"
+        },
+        {
+            "name": "Oğuzhan ERDOĞAN",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/751947-o__uzhan_erdo__an__10_ekim_2019__s__vas.png",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=751947"
+        },
+        {
+            "name": "Ramazan FAKÇI",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/789657-9__sg_er_ramazan_fakci__17_08_2014__gaziantep.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=789657"
+        },
+        {
+            "name": "Ramazan KÖSE",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/590800-11__j__er_ramazan_kose__25_10_2014__artvin.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=590800"
+        },
+        {
+            "name": "Ramazan YEL",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/163087-17__p__cv___ramazan_yel__09_12_2014__kutahya.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=163087"
+        },
+        {
+            "name": "Ramazan ÖZMEN",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/295661-ul___er_ramazan_ozmen__08_10_2017__konya.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=295661"
+        },
+        {
+            "name": "Raşit YÜCEL",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/970740-sehitulserrasityucelankara17122016.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=970740"
+        },
+        {
+            "name": "Recep BEYCUR",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/310487-23__j__er_recep_beycur__19_08_2015__erzurum.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=310487"
+        },
+        {
+            "name": "Recep BODUR",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/80258-9__j__er_recep_bodur__18_02_2016__amasya.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=80258"
+        },
+        {
+            "name": "Recep MÜTEVELLİOĞLU",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/858893-2__j__er_recep_mutevellio_lu__26_05_2014__konya.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=858893"
+        },
+        {
+            "name": "Recep YILDIRIM",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/589455-recep_yildirim__20_05_2018_tokat.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=589455"
+        },
+        {
+            "name": "Reşit YILDIZ",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/95736-sehiterresityildiz24052017diyarbakir.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=95736"
+        },
+        {
+            "name": "Rıdvan SAĞDIÇ",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/322533-ridvan_sagdic_10062021_tekirdag.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=322533"
+        },
+        {
+            "name": "Sabır BİNEN",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/455978-sehitsabirbinendiyarbakir14062017.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=455978"
+        },
+        {
+            "name": "Salih BULUT",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/650628-20__j__er_salih_bulut__06_06_2016__sivas.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=650628"
+        },
+        {
+            "name": "Samat KAYMAKÇI",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/188228-samat_kaymakci__09_11_20018_gaz_antep.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=188228"
+        },
+        {
+            "name": "Samet ÇALDIR",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/655715-samet_caldir_27072020_mus.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=655715"
+        },
+        {
+            "name": "Sedat KAYA",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/991175-sehitsedatkayaistanbul21072016.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=991175"
+        },
+        {
+            "name": "Sedat MEKAN",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/945876-sedat_mekan__29_04_2018__samsun.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=945876"
+        },
+        {
+            "name": "Sedat SORGUN",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/922129-sedat_sorgun_14022021_erzurum.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=922129"
+        },
+        {
+            "name": "Sefa UZUN",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/266593-19__j__er_sefa_uzun__07_05_2016__bursa.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=266593"
+        },
+        {
+            "name": "Sefanur PARHAN",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/167242-sehittoponbsefanurparhan25102017sanliurfa.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=167242"
+        },
+        {
+            "name": "Sefter TAŞ",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/391265-p__er_sefter_ta__01_09_2015__i_dir.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=391265"
+        },
+        {
+            "name": "Selim GEDİK",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/274172-selim_gedik_24012021_sakarya.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=274172"
+        },
+        {
+            "name": "Semih ERDOĞAN",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/645045-km.-er-semih-erdogan-25.07.2025-giresun.jpg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=645045"
+        },
+        {
+            "name": "Serdar AMAK",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/444605-sehitperserdaramakizmir17122016.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=444605"
+        },
+        {
+            "name": "Sezai EKŞİOĞLU",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/966632-sezaie__k__o__lu20_10_2019erzurum.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=966632"
+        },
+        {
+            "name": "Sinan GÖKTAŞ",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/666762-sehitersinangoktas17082016sivas.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=666762"
+        },
+        {
+            "name": "Sinan HAMZA",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/369167-j__komd__er_sinan_hamza__27_06_2017__samsun.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=369167"
+        },
+        {
+            "name": "Soner SÜYLÜ",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/607304-sehitsonersuylusamsun05072016.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=607304"
+        },
+        {
+            "name": "Suat SURKİ",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/821808-sehitersuatsurkivan15112017.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=821808"
+        },
+        {
+            "name": "Süleyman ALTINDAĞ",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/880219-sehitsuleymanaltindagusak291020161.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=880219"
+        },
+        {
+            "name": "Süleyman SUNGUR",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/645359-suleyman_sungur_14022021_siirt.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=645359"
+        },
+        {
+            "name": "Taner KAYA",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/649103-16__p__er_taner_kaya__06_12_2014__mardin.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=649103"
+        },
+        {
+            "name": "Tarık TARCAN",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/42229-tarik_tarcan_02022022_eskisehir.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=42229"
+        },
+        {
+            "name": "Tayfur ÇANKAYA",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/436089-sehittayfurcankaya10082016afyon.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=436089"
+        },
+        {
+            "name": "Tevfik Yasin KESER",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/821882-tevfik_yasin_keser_08042021_izmir.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=821882"
+        },
+        {
+            "name": "Tunahan DOKTUR",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/521229-sehittunahandokturankara28082016.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=521229"
+        },
+        {
+            "name": "Uğur KORKMAZ",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/632704-sehitiserugurkorkmazrize17122016.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=632704"
+        },
+        {
+            "name": "Uğur ÇAKMAK",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/750947-ugur___akmak__04_03_2019__balikes__r.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=750947"
+        },
+        {
+            "name": "Uğur İPEK",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/36549-sehituguripeknevsehir23102016.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=36549"
+        },
+        {
+            "name": "Uğurcan IŞIK",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/110728-p.-er-ugurcan-isik-22.08.2024-malatya.png",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=110728"
+        },
+        {
+            "name": "Vedat DOLANÇAY",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/451637-3__p__er_vedat_dolancay__09_02_2016__van.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=451637"
+        },
+        {
+            "name": "Vedat SARIKAYA",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/165241-14__p__er_vedat_sarikaya_26_11_2014__kahramanmara.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=165241"
+        },
+        {
+            "name": "Volkan KARATEPE",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/13884-13__j__onb__volkan_karatepe__22_04_2016__sivas.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=13884"
+        },
+        {
+            "name": "Volkan SOY",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/984780-volkan_soy_14102020_kars.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=984780"
+        },
+        {
+            "name": "Yiğit ŞAHAN",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/313368-6__shh__onb__yi_it_ahan__22_07_2014__izmir.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=313368"
+        },
+        {
+            "name": "Yunus Emre DURAN",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/227135-sehitperemredurankirsehir17122016.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=227135"
+        },
+        {
+            "name": "Yunus KAYMAK",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/775063-sehityunuskaymakordu14102016.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=775063"
+        },
+        {
+            "name": "Yunus YILMAZ",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/381359-12__j__er_yunus_yilmaz__25_10_2014__bingol.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=381359"
+        },
+        {
+            "name": "Yusuf BEYLEM",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/111284-24__p__onb__yusuf_beylem__02_09_2015__anliurfa.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=111284"
+        },
+        {
+            "name": "Yusuf GÜRLER",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/394792-yusuf_gurler_05072022_sanliurfa.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=394792"
+        },
+        {
+            "name": "Yusuf SOFİOĞLU",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/354361-yusuf_sofio__lu_02082022_diyarbakir.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=354361"
+        },
+        {
+            "name": "Yusuf YAVUZ",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/802631-yusuf_yavuz__14_03_2018__ni_de.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=802631"
+        },
+        {
+            "name": "Yusuf ÖNDER",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/833509-yusuf_under__09_11_20018__bursa.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=833509"
+        },
+        {
+            "name": "Yılmaz Oğuzhan KULA",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/256502-sehityilmazkulayozgat291020161.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=256502"
+        },
+        {
+            "name": "Zekeriya ALTUNOK",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/670469-zekeriya_altunok__22_10_2019__yozgat.png",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=670469"
+        },
+        {
+            "name": "Çağatay Necati DİNÇ",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/776493-ca_atay_necati_dinc__19_06_2018__izmir.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=776493"
+        },
+        {
+            "name": "Çağlar İNAN",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/298639-28__p__cv___ca_lar_inan__13_12_2015__tekirda.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=298639"
+        },
+        {
+            "name": "Çınar TAŞ",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/511276-j__er_a_nar_taa__10_07_2017__kahramanmaraa.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=511276"
+        },
+        {
+            "name": "Ömer ERÜSTÜN",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/758576-22__j__er_omer_erustun__19_08_2015__kahramanmara.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=758576"
+        },
+        {
+            "name": "Ömer Kağan KANDEMİR",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/503576-11__p__er_omer_ka_an_kandemir__30_07_2015__denizli.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=503576"
+        },
+        {
+            "name": "Ömer SARI",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/709387-omersari.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=709387"
+        },
+        {
+            "name": "Ömer YALÇIN",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/182910-4__p__er_omer_yalcin__13_02_2015__bitlis.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=182910"
+        },
+        {
+            "name": "Ömer ÖNER",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/298312-sehitomeroneristanbul26072016.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=298312"
+        },
+        {
+            "name": "Ömer ÖZAVCI",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/613667-sehitjeromerozavcikocaeli27112017.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=613667"
+        },
+        {
+            "name": "Özgür BEDİR",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/848663-3__j__er_ozgur_bedir__16_01_2015__mardin.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=848663"
+        },
+        {
+            "name": "Özkan ÖZDEN",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/444377-14__j__er_ozkan_ozden__22_04_2016__samsun.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=444377"
+        },
+        {
+            "name": "Ümit ÇELİK",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/188017-sehitpcvsumitcelik06052017kirikkale.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=188017"
+        },
+        {
+            "name": "İbrahim ÖZKUR",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/133510-ibrahim_uzkur__09_11_20018__mu.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=133510"
+        },
+        {
+            "name": "İdris GÜLEK",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/916593-sehitjeridrisgulek25122017van.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=916593"
+        },
+        {
+            "name": "İdris SOLMAZ",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/263067-1__j__er_idris_solmaz__19_04_2014__diyarbakir.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=263067"
+        },
+        {
+            "name": "İlhami ÇELEBİ",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/655020-ilhami_celebi__18_04_2018__diyarbakir.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=655020"
+        },
+        {
+            "name": "İsa ERÇETİN",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/923286-11__mu__er__isa_ercetin__28_08_2018__istanbul.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=923286"
+        },
+        {
+            "name": "İsa KARAKAŞ",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/452564-29__j__er_isa_karaka__25_12_2015__gaziantep.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=452564"
+        },
+        {
+            "name": "İsa NAZLIM",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/997529-sehitisanazlimkirikkale30112016.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=997529"
+        },
+        {
+            "name": "İsmail ÇİL",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/808816-sehitismailciltrabzon02082016.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=808816"
+        },
+        {
+            "name": "Şahabettin ATAK",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/760254-8__is__er_ahabettin_atak__05_07_2015__irnak.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=760254"
+        },
+        {
+            "name": "Şahin TAŞKIN",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/849310-2__hv__ul___er_ahin_ta_kin__04_01_2015__bursa.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=849310"
+        },
+        {
+            "name": "Şevki Eren YATKIN",
+            "photo": "https://www.mehmetcik.org.tr/uploads/sayfaResim/762890-sevki_eren_yatkin__08_06_2018__kastamonu.118x142.jpeg",
+            "url": "https://www.mehmetcik.org.tr/sehitlerimiz?id=762890"
+        }
     ]
 }

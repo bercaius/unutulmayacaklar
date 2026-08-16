@@ -7,6 +7,7 @@ from urllib.error import URLError, HTTPError
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 NAMES_FILE = os.path.join(BASE_DIR, 'data', 'names.json')
+ROOT = 'https://www.mehmetcik.org.tr'
 
 SOURCES = [
     'https://www.mehmetcik.org.tr/sehitlerimiz',
@@ -106,50 +107,50 @@ def load_names():
         return []
     with open(NAMES_FILE, 'r', encoding='utf-8') as f:
         data = json.load(f)
-        return data.get('names', [])
+        raw = data.get('names', [])
+        return [n if isinstance(n, dict) else {'name': n, 'photo': None} for n in raw]
 
 
-def save_names(names):
+def save_names(entries):
     os.makedirs(os.path.dirname(NAMES_FILE), exist_ok=True)
     with open(NAMES_FILE, 'w', encoding='utf-8') as f:
-        json.dump({'names': names}, f, ensure_ascii=False, indent=4)
+        json.dump({'names': entries}, f, ensure_ascii=False, indent=4)
 
 
-def is_name_in_db(partial_name, db_names):
-    parts = partial_name.split()
-    for db_name in db_names:
-        db_parts = db_name.split()
-        if len(parts) <= len(db_parts):
-            if db_parts[:len(parts)] == parts:
-                return True
-    return False
+def is_valid_name(text):
+    words = text.split()
+    if len(words) < 2 or len(words) > 3:
+        return False
+    for w in words:
+        if len(w) < 2:
+            return False
+        if not (w[0].isupper() and w[1:].islower()):
+            return False
+    low = text.lower()
+    if any(p in low for p in BLOCKLIST_PHRASES):
+        return False
+    if any(w.lower() in STOP_WORDS for w in words):
+        return False
+    return True
 
 
-def extract_sehit_names(html):
-    found = set()
-    sehit_elements = re.findall(
-        r'class="[^"]*sehit[^"]*"[^>]*>(.*?)</(?:div|span|a|h[1-6])>',
-        html, re.DOTALL | re.IGNORECASE
-    )
-    for content in sehit_elements:
-        text = re.sub(r'<[^>]+>', ' ', content)
-        text = re.sub(r'\s+', ' ', text).strip()
-        words = text.split()
-        name_words = []
-        for word in words[:4]:
-            if len(word) >= 2 and word[0].isupper() and word[1:].islower():
-                name_words.append(word)
-            else:
-                if len(name_words) >= 2:
-                    break
-                else:
-                    name_words = []
-                    break
-        if len(name_words) >= 2:
-            candidate = ' '.join(name_words)
-            if all(w[0].isupper() for w in candidate.split()):
-                found.add(candidate)
-    return found
+def extract_sehit_entries(html):
+    blocks = re.findall(
+        r'<div class="col-md-2 col-6 text-center sehit">(.*?)</div>',
+        html, re.DOTALL)
+    entries = {}
+    for b in blocks:
+        img = re.search(r'src="([^"]+)"', b)
+        name = re.search(r'<strong>([^<]+)</strong>', b)
+        if img and name:
+            nm = name.group(1).strip()
+            if is_valid_name(nm):
+                src = img.group(1)
+                full = src if src.startswith('http') else ROOT + src
+                mid = re.search(r'/(\d+)-', src)
+                url = (ROOT + '/sehitlerimiz?id=' + mid.group(1)) if mid else (ROOT + '/sehitlerimiz')
+                entries[nm] = (full, url)
+    return entries
 
 
 def fetch_url(url):
@@ -164,7 +165,14 @@ def fetch_url(url):
 
 def main():
     existing = load_names()
-    new_names = set()
+    # Geriye dönük: mevcut kayıtlara fotoğraftan detay URL'si türet
+    for e in existing:
+        if not e.get('url') and e.get('photo'):
+            mid = re.search(r'/(\d+)-', e['photo'])
+            if mid:
+                e['url'] = ROOT + '/sehitlerimiz?id=' + mid.group(1)
+    existing_map = {e['name']: e for e in existing}
+    new_entries = []
 
     for url in SOURCES:
         print(f'Fetching {url}...')
@@ -172,26 +180,29 @@ def main():
         if not html:
             continue
 
-        names = extract_sehit_names(html)
-        print(f'Found {len(names)} names from {url}')
-        for name in names:
-            if not is_name_in_db(name, existing):
-                new_names.add(name)
+        entries = extract_sehit_entries(html)
+        print(f'Found {len(entries)} entries from {url}')
+        for nm, (ph, det_url) in entries.items():
+            if nm not in existing_map:
+                new_entries.append({'name': nm, 'photo': ph, 'url': det_url})
 
-    added = []
-    current = list(existing)
-    for name in sorted(new_names):
-        if name not in current:
-            current.append(name)
-            added.append(name)
+    final = existing + new_entries
+    final_sorted = sorted(final, key=lambda e: e['name'])
 
-    final_names = sorted(set(current))
-    save_names(final_names)
-    print(f'\nTotal names in database: {len(final_names)}')
-    print(f'Added {len(added)} new names')
-    if added:
-        for n in added:
-            print(' +', n)
+    # Güvenlik: siteden beklenenden çok az veri geldiyse (site geçici çökmüş
+    # veya yapı değişmiş olabilir) mevcut dosyayı bozmadan koru.
+    min_safe = max(1, int(len(existing) * 0.5))
+    if len(final_sorted) < min_safe:
+        print('SAFETY: fetched count too low ({} < {}), keeping previous file.'.format(
+            len(final_sorted), min_safe))
+        return 0
+
+    save_names(final_sorted)
+    print(f'\nTotal entries in database: {len(final_sorted)}')
+    print(f'Added {len(new_entries)} new entries')
+    if new_entries:
+        for n in new_entries:
+            print(' +', n['name'])
     return 0
 
 
