@@ -18,6 +18,9 @@
     <meta http-equiv="X-Frame-Options" content="DENY">
     <meta http-equiv="X-XSS-Protection" content="1; mode=block">
     <meta http-equiv="Referrer-Policy" content="no-referrer">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     <link rel="canonical" href="https://unutulmayacaklar.github.io/unutulmayacaklar/">
     <style>
         * {
@@ -265,86 +268,102 @@
 
         @media (max-width: 820px) {
             .scroll-container {
-                margin-left: 60px;
+                margin-left: 54px;
                 max-width: 100%;
-                padding-left: 10px;
-                padding-right: 10px;
+                padding-left: 20px;
+                padding-right: 20px;
             }
             .left-text {
-                width: 50px;
-                font-size: 1.6rem;
-                top: 72px;
+                width: 44px;
+                font-size: 1.5rem;
+                top: 70px;
+                letter-spacing: 0.32em;
+                opacity: 0.75;
             }
             .site-logo {
-                width: 90px;
+                width: 82px;
+                top: 14px;
+                left: 14px;
+                opacity: 0.8;
             }
             .name-item {
-                font-size: 1.6rem;
-                padding: 1.05rem 0.4rem;
+                font-size: 1.55rem;
+                padding: 1.15rem 0.5rem;
+                letter-spacing: 0.04em;
+                line-height: 1.5;
+                white-space: normal;
+                max-width: 100%;
             }
             .kurdele {
-                width: 90px;
-                height: 90px;
+                width: 82px;
+                height: 82px;
                 top: 16px;
                 right: 16px;
+                opacity: 0.65;
             }
             .footer {
-                left: 60px;
+                left: 54px;
                 font-size: 0.72rem;
-                padding: 14px 12px;
+                padding: 18px 16px;
+                letter-spacing: 0.12em;
             }
         }
 
         @media (max-width: 560px) {
             .scroll-container {
-                margin-left: 48px;
-                padding-left: 6px;
-                padding-right: 6px;
+                margin-left: 0;
+                padding-left: 22px;
+                padding-right: 22px;
             }
             .left-text {
-                width: 38px;
-                font-size: 1.2rem;
-                top: 66px;
+                display: none;
             }
             .site-logo {
-                width: 70px;
+                width: 60px;
                 top: 12px;
                 left: 12px;
+                opacity: 0.85;
             }
             .kurdele {
-                width: 70px;
-                height: 70px;
-                top: 14px;
-                right: 14px;
+                width: 60px;
+                height: 60px;
+                top: 12px;
+                right: 12px;
+                opacity: 0.6;
             }
             .name-item {
-                font-size: 1.6rem;
-                padding: 1.05rem 0.4rem;
-                letter-spacing: 0.02em;
+                font-size: 1.5rem;
+                padding: 1.25rem 0.5rem;
+                letter-spacing: 0.04em;
+                line-height: 1.55;
+                white-space: normal;
+                max-width: 100%;
             }
             .footer {
-                left: 48px;
+                left: 0;
+                right: 0;
                 font-size: 0.7rem;
-                padding: 14px 10px;
-                letter-spacing: 0.06em;
+                padding: 16px 60px;
+                letter-spacing: 0.1em;
             }
             .detail-panel {
-                width: calc(100% - 20px);
-                right: 10px;
-                left: 10px;
+                width: calc(100% - 24px);
+                right: 12px;
+                left: 12px;
                 top: auto;
-                bottom: 74px;
+                bottom: 80px;
                 transform: translateY(40px);
-                max-height: 72vh;
+                max-height: 70vh;
                 overflow-y: auto;
-                background: rgba(8, 8, 8, 0.98);
+                border-radius: 10px;
+                background: rgba(10, 10, 10, 0.98);
                 transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1), transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
             }
             .detail-panel.show {
                 transform: translateY(0);
             }
             .detail-portrait {
-                height: 250px;
+                height: 230px;
             }
         }
 
@@ -844,10 +863,14 @@
             if (bgMusic.paused) tryPlayMuted();
             document.removeEventListener('pointerdown', ensureStartOnce);
             document.removeEventListener('keydown', ensureStartOnce);
+            document.removeEventListener('touchstart', ensureStartOnce);
+            document.removeEventListener('click', ensureStartOnce);
             syncIcon();
         }
         document.addEventListener('pointerdown', ensureStartOnce);
         document.addEventListener('keydown', ensureStartOnce);
+        document.addEventListener('touchstart', ensureStartOnce);
+        document.addEventListener('click', ensureStartOnce);
 
         musicToggle.addEventListener('click', function(e) {
             e.stopPropagation();
@@ -861,6 +884,9 @@
 
         bgMusic.addEventListener('play', syncIcon);
         bgMusic.addEventListener('pause', syncIcon);
+        bgMusic.addEventListener('error', function() {
+            console.error('MÜZİK YÜKLENEMEDİ: dosya bulunamadı veya desteklenmiyor. (media/background-music.mp3)');
+        });
 
         syncIcon();
     </script>
