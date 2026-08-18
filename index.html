@@ -347,6 +347,59 @@
                 height: 250px;
             }
         }
+
+        .music-toggle {
+            position: fixed;
+            bottom: 16px;
+            right: 16px;
+            width: 44px;
+            height: 44px;
+            border: 1px solid #2a2a2a;
+            border-radius: 50%;
+            background: rgba(12, 12, 12, 0.85);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 9;
+            opacity: 0.75;
+            transition: opacity 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+            padding: 0;
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.6);
+        }
+
+        .music-toggle:hover {
+            opacity: 1;
+            transform: scale(1.08);
+            border-color: #444;
+        }
+
+        .music-toggle img {
+            width: 22px;
+            height: 22px;
+            display: block;
+            filter: invert(1);
+            pointer-events: none;
+        }
+
+        .music-toggle.playing {
+            opacity: 1;
+            border-color: #5a5a5a;
+            box-shadow: 0 0 14px rgba(255, 255, 255, 0.35);
+        }
+
+        @media (max-width: 560px) {
+            .music-toggle {
+                bottom: 14px;
+                right: 14px;
+                width: 40px;
+                height: 40px;
+            }
+            .music-toggle img {
+                width: 20px;
+                height: 20px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -370,6 +423,12 @@
     </div>
 
     <div class="footer">Şehitlerimizin hatırasına</div>
+
+    <button class="music-toggle" id="musicToggle" type="button" aria-label="Müziği aç / kapat" title="Müziği aç / kapat">
+        <img id="musicIcon" src="media/sound-on.svg" alt="">
+    </button>
+
+    <audio id="bgMusic" loop preload="auto" autoplay muted playsinline src="media/background-music.mp3"></audio>
 
     <script>
         const BACKEND_URL = 'https://unutulmayacaklar.onrender.com';
@@ -755,6 +814,55 @@
                 if (!firstText || firstText.length < 2) { /* silent */ }
             }
         }, 3000);
+
+        // Arka plan müziği: siteye girişte sessiz (muted) başlar, sağ alttaki ikona
+        // tıklayınca ses açılır ve SVG değişir. Tarayıcılar sesli otomatik çalmayı
+        // engellediği için önce sessiz başlatılır; ilk etkileşimde de garanti edilir.
+        const bgMusic = document.getElementById('bgMusic');
+        const musicToggle = document.getElementById('musicToggle');
+        const musicIcon = document.getElementById('musicIcon');
+        let soundOn = false;
+
+        function syncIcon() {
+            musicIcon.src = soundOn ? 'media/sound-on.svg' : 'media/sound-off.svg';
+            musicToggle.classList.toggle('playing', !bgMusic.paused);
+        }
+
+        function tryPlayMuted() {
+            bgMusic.muted = true;
+            const p = bgMusic.play();
+            if (p && typeof p.then === 'function') {
+                p.catch(function() { /* otomatik çalma engellendi */ });
+            }
+        }
+
+        window.addEventListener('load', tryPlayMuted);
+
+        // Otomatik çalma tamamen engellenmişse, kullanıcı ilk kez etkileşimde
+        // bulununca sessiz olarak yine de başlat.
+        function ensureStartOnce() {
+            if (bgMusic.paused) tryPlayMuted();
+            document.removeEventListener('pointerdown', ensureStartOnce);
+            document.removeEventListener('keydown', ensureStartOnce);
+            syncIcon();
+        }
+        document.addEventListener('pointerdown', ensureStartOnce);
+        document.addEventListener('keydown', ensureStartOnce);
+
+        musicToggle.addEventListener('click', function(e) {
+            e.stopPropagation();
+            if (bgMusic.paused) {
+                bgMusic.play().catch(function() {});
+            }
+            soundOn = !soundOn;
+            bgMusic.muted = !soundOn;
+            syncIcon();
+        });
+
+        bgMusic.addEventListener('play', syncIcon);
+        bgMusic.addEventListener('pause', syncIcon);
+
+        syncIcon();
     </script>
 </body>
 </html>
